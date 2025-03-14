@@ -190,6 +190,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
+            // Change preview heading
+            document.querySelector('#preview h3').textContent = 'After Removing Duplicates';
+
             // Show processing state
             processing.classList.remove('d-none');
             results.classList.add('d-none');
