@@ -10,6 +10,9 @@
     border-radius: 4px;
     border: 2px solid #444;
 }
+#resultsSummary{
+    color: aliceblue;
+}
 
 .preview-image {
     transition: transform 0.2s;
