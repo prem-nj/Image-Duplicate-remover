@@ -11,6 +11,7 @@
     border: 2px solid #444;
 }
 #resultsSummary{
+    text-align: center;
     color: aliceblue;
 }
 
