@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Duplicate Detector</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="container py-4">
+        <header class="text-center mb-5">
+            <h1>Image Duplicate Detector</h1>
+            <p class="lead">Upload multiple images to find and remove duplicates</p>
+        </header>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="upload-container p-4 mb-4 rounded">
+                    <div class="mb-3">
+                        <label for="fileInput" class="form-label">Choose Images</label>
+                        <input type="file" class="form-control" id="fileInput" multiple accept="image/*" onchange="toggleProcessButton()">
+                    </div>
+                    <div class="mb-3">
+                        <label for="folderInput" class="form-label">Or Select a Folder</label>
+                        <input type="file" class="form-control" id="folderInput" webkitdirectory directory onchange="toggleProcessButton()">
+                    </div>
+                    <button id="processButton" class="btn btn-primary" disabled>
+                        <i class="bi bi-search"></i> Find Duplicates
+                    </button>
+                </div>
+
+                <div id="preview" class="mb-4">
+                    <h3>Preview</h3>
+                    <div id="imagePreview" class="d-flex flex-wrap gap-2"></div>
+                </div>
+
+                <div id="processing" class="d-none">
+                    <div class="d-flex justify-content-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Processing...</span>
+                        </div>
+                    </div>
+                    <p class="text-center mt-2">Processing images...</p>
+                </div>
+
+                <div id="results" class="d-none">
+                    <h3>Results</h3>
+                    <div class="alert alert-info" id="resultsSummary"></div>
+                    <div id="uniqueImages">
+                        <h4>Unique Images</h4>
+                        <div id="uniqueImagesList" class="d-flex flex-wrap gap-2"></div>
+                    </div>
+                    <div id="duplicateGroups" class="mt-4">
+                        <h4>Duplicate Groups</h4>
+                        <div id="duplicateGroupsList"></div>
+                        <button id="deleteAllDuplicatesBtn" class="btn btn-danger mt-3 d-none">
+                            <i class="bi bi-trash"></i> Delete All Duplicates
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script>
+        function toggleProcessButton() {
+            const fileInput = document.getElementById('fileInput');
+            const folderInput = document.getElementById('folderInput');
+            const processButton = document.getElementById('processButton');
+            if (fileInput.files.length > 0 || folderInput.files.length > 0) {
+                processButton.disabled = false;
+            } else {
+                processButton.disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>
+

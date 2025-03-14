@@ -1,0 +1,98 @@
+.upload-container {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px dashed #444;
+}
+
+.preview-image, .result-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 2px solid #444;
+}
+
+.preview-image {
+    transition: transform 0.2s;
+}
+
+.preview-image:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+#imagePreview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    min-height: 100px;
+}
+
+.duplicate-group {
+    background: var(--bs-dark);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    border: 1px solid var(--bs-border-color);
+}
+
+.duplicate-group .original {
+    border: 2px solid var(--bs-primary);
+}
+
+.duplicate-group .duplicate {
+    border: 2px solid var(--bs-danger);
+}
+
+.duplicate-group .btn-danger {
+    margin-left: 1rem;
+}
+
+.deleted {
+    opacity: 0.5;
+    position: relative;
+}
+
+.deleted::after {
+    content: "DELETED";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(var(--bs-danger-rgb), 0.8);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    color: white;
+}
+
+#imagePreview img {
+    transition: transform 0.2s;
+}
+
+#imagePreview img:hover {
+    transform: scale(1.05);
+}
+
+.alert {
+    background-color: var(--bs-dark);
+    border: 1px solid var(--bs-border-color);
+}
+
+.duplicates-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.duplicate.deleted {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#preview, #results {
+    background-color: rgba(255, 255, 255, 0.02);
+    padding: 1rem;
+    border-radius: 4px;
+}
