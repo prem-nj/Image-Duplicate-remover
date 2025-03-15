@@ -1,5 +1,8 @@
 {
   "version": 2,
+  "buildCommand": false,
+  "devCommand": false,
+  "installCommand": false,
   "routes": [
     { "handle": "filesystem" },
     { "src": "/[^.]+", "dest": "/index.html" }
