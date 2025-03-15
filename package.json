@@ -1,8 +1,0 @@
-{
-  "name": "duplicate-detector",
-  "version": "1.0.0",
-  "description": "Image Duplicate Detector",
-  "scripts": {
-    "build": "echo 'No build required'"
-  }
-}
