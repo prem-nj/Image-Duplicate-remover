@@ -1,12 +1,10 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "create-react-app",
+  "builds": [
+    { "src": "**/*", "use": "@vercel/static" }
+  ],
   "routes": [
-    {
-      "src": "/[^.]+",
-      "dest": "/index.html"
-    }
+    { "handle": "filesystem" },
+    { "src": "/[^.]+", "dest": "/index.html" }
   ]
 }
